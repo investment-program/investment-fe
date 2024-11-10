@@ -1,0 +1,16 @@
+.header{
+  background-color: white;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    color:#4C506B;
+  }
