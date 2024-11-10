@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import './serve.css';
 import React, { useState } from 'react';
 import Header from '../0header/header';
@@ -64,7 +63,6 @@ export default function Serve() {
     </div>
   );
 }
-=======
 import './serve.css';
 import React, { useState } from 'react';
 import Header from '../0header/header';
@@ -130,4 +128,3 @@ export default function Serve() {
     </div>
   );
 }
->>>>>>> 8711932897d2d404db0b6dc16c1b09b8b4fc9a03
