@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './main.css';
 import Header from '../0header/header';
+import Result from '../3result/result';
 
 export default function Main() {
   const [formData, setFormData] = useState({
@@ -9,12 +10,14 @@ export default function Main() {
     min_dividend: 0,
     investment_style: '공격투자형',
     backtesting_period: {
-      start_year: 2000,
-      start_month: 1,
-      end_year: 2000,
-      end_month: 1,
+      start_year: null,
+      start_month: null,
+      end_year: null,
+      end_month: null,
     },
   });
+  const [showResult, setShowResult] = useState(false); // Result 표시 상태
+  const [resultData, setResultData] = useState(null); // API 응답 데이터 상태
 
   const handleSubmit = async () => {
     try {
@@ -31,9 +34,14 @@ export default function Main() {
 
       console.log('Updated Form Data:', updatedFormData);
 
-      const response = await axios.post('https://www.investment-up.shop/condition', updatedFormData);
+      const response = await axios.post(
+        'https://www.investment-up.shop/condition',
+        updatedFormData
+      );
 
       console.log('Response Data:', response.data);
+      setResultData(response.data); // API 응답 데이터 저장
+      setShowResult(true); // Result 표시 상태 활성화
     } catch (error) {
       console.error('Error submitting form:', error);
       if (error.response) {
@@ -45,14 +53,12 @@ export default function Main() {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // 배당 수익률 값이 0 이상일 때만 설정
     if (name === 'min_dividend') {
       setFormData((prevData) => ({
         ...prevData,
-        min_dividend: value >= 0 ? value : 0, // 음수값을 막고 0 이상으로 제한
+        min_dividend: value >= 0 ? value : 0, // 음수값 방지
       }));
     } else if (name.includes('start') || name.includes('end')) {
-      // 날짜 필드 처리
       setFormData((prevData) => ({
         ...prevData,
         backtesting_period: {
@@ -85,7 +91,7 @@ export default function Main() {
           </div>
 
           <div className="input-group1">
-            <label>배당 수익률</label>
+            <label>배당 수익률 (%)</label>
             <input
               type="number"
               name="min_dividend"
@@ -160,6 +166,9 @@ export default function Main() {
               설정 완료
             </button>
           </div>
+
+          {/* 설정 완료 버튼 아래에 Result 컴포넌트를 조건부 렌더링 */}
+          {showResult && <Result data={resultData} />}
         </div>
       </main>
     </div>
