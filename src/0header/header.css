@@ -13,4 +13,19 @@
     display: flex;
     align-items: center;
     color:#4C506B;
+    margin-left: 20px;
+    margin-bottom: 10px;
   }
+
+.nav-links a {
+  text-decoration: none; 
+  color: gray;
+  margin-right: 20px; 
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: black;
+  text-decoration: none; 
+}

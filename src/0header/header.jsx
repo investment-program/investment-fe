@@ -11,7 +11,7 @@ export default function Header() {
     <div className="header">
       <header className="navbar">
         <div className="nav-left">
-          <h3>Our Stock Project</h3>
+          <h3>분산 투자 보조 프로그램</h3>
         </div>
         <div className="nav-links">
           <NavLink style={({ isActive }) => (isActive ? activeStyle : {})}  to="/" exact="true">조건설정</NavLink>

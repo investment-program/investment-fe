@@ -10,10 +10,10 @@ export default function Main() {
     min_dividend: 0,
     investment_style: '공격투자형',
     backtesting_period: {
-      start_year: null,
-      start_month: null,
-      end_year: null,
-      end_month: null,
+      start_year: 2000,
+      start_month: 1,
+      end_year: 2000,
+      end_month: 1,
     },
   });
   const [showResult, setShowResult] = useState(false); // Result 표시 상태
@@ -97,9 +97,9 @@ export default function Main() {
               name="min_dividend"
               onChange={handleChange}
               value={formData.min_dividend}
-              placeholder="%"
+              placeholder="최소 배당 수익률 (%)"
               min="0"
-              step="0.01"
+              step="1"
             />
           </div>
 
@@ -166,10 +166,9 @@ export default function Main() {
               설정 완료
             </button>
           </div>
-
+        </div>
           {/* 설정 완료 버튼 아래에 Result 컴포넌트를 조건부 렌더링 */}
           {showResult && <Result data={resultData} />}
-        </div>
       </main>
     </div>
   );
