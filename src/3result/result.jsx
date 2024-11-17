@@ -96,43 +96,42 @@ export default function Result({ data }) {
           )}
         </div>
         </div>
-        <div className="result-section">
-          <h3>포트폴리오 메트릭스</h3>
-          <ul>
-            <li>최종 가치: {portfolio.final_value.toLocaleString()} 원</li>
-            <li>총 수익률: {(portfolio.total_return).toFixed(2)}%</li>
-            <li>연간 변동성: {(portfolio.annual_volatility).toFixed(2)}%</li>
-            <li>샤프 비율: {portfolio.sharpe_ratio.toFixed(2)}</li>
-            <li>최대 낙폭: {(portfolio.max_drawdown).toFixed(2)}%</li>
-            <li>승률: {(portfolio.win_rate).toFixed(2)}%</li>
-          </ul>
-        </div>
-      </div>
+        <div className='side-by-side-section'>
+          <div className="result-section">
+            <h3>포트폴리오 메트릭스</h3>
+            <ul>
+              <li>최종 가치: {portfolio.final_value.toLocaleString()} 원</li>
+              <li>총 수익률: {(portfolio.total_return).toFixed(2)}%</li>
+              <li>연간 변동성: {(portfolio.annual_volatility).toFixed(2)}%</li>
+              <li>샤프 비율: {portfolio.sharpe_ratio.toFixed(2)}</li>
+              <li>최대 낙폭: {(portfolio.max_drawdown).toFixed(2)}%</li>
+              <li>승률: {(portfolio.win_rate).toFixed(2)}%</li>
+            </ul>
+          </div>
+          <div className="result-section">
+            <h3>포트폴리오 구성</h3>
+            <ul>
+              {portfolio.composition && portfolio.composition.length > 0 ? (
+                portfolio.composition.map((stock, index) => (
+                  <li key={index}>
+                    {stock.name} ({stock.code}): {(stock.weight).toFixed(2)}%
+                  </li>
+                ))
+              ) : (
+                <li>포트폴리오 구성이 없습니다.</li>
+              )}
+            </ul>
+          </div>
 
-      <div className="result-section">
-        <h3>포트폴리오 구성</h3>
-        <ul>
-          {portfolio.composition && portfolio.composition.length > 0 ? (
-            portfolio.composition.map((stock, index) => (
-              <li key={index}>
-                {stock.name} ({stock.code}): {(stock.weight).toFixed(2)}%
-              </li>
-            ))
-          ) : (
-            <li>포트폴리오 구성이 없습니다.</li>
-          )}
-        </ul>
-      </div>
-
-      <div className="result-section">
-        <h3>벤치마크 메트릭스</h3>
-        <ul>
-          <li>최종 가치: {benchmark.final_value.toLocaleString()} 원</li>
-          <li>총 수익률: {(benchmark.total_return).toFixed(2)}%</li>
-          <li>연간 변동성: {(benchmark.annual_volatility).toFixed(2)}%</li>
-        </ul>
-      </div>
-
+          <div className="result-section">
+            <h3>벤치마크 메트릭스</h3>
+            <ul>
+              <li>최종 가치: {benchmark.final_value.toLocaleString()} 원</li>
+              <li>총 수익률: {(benchmark.total_return).toFixed(2)}%</li>
+              <li>연간 변동성: {(benchmark.annual_volatility).toFixed(2)}%</li>
+            </ul>
+          </div>
+        
       <div className="result-section">
         <h3>개별 종목 성과</h3>
         <table>
@@ -159,6 +158,8 @@ export default function Result({ data }) {
             )}
           </tbody>
         </table>
+      </div>
+      </div>
       </div>
     </div>
   );
