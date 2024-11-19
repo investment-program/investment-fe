@@ -95,7 +95,7 @@ export default function Result({ data }) {
             <p>위험-수익 이미지가 없습니다.</p>
           )}
         </div>
-        </div>
+        <div className='side-by-side-section1'>
         <div className="result-section">
           <h3>포트폴리오 메트릭스</h3>
           <ul>
@@ -107,7 +107,6 @@ export default function Result({ data }) {
             <li>승률: {(portfolio.win_rate).toFixed(2)}%</li>
           </ul>
         </div>
-      </div>
 
       <div className="result-section">
         <h3>포트폴리오 구성</h3>
@@ -159,6 +158,9 @@ export default function Result({ data }) {
             )}
           </tbody>
         </table>
+      </div>
+      </div>
+      </div>
       </div>
     </div>
   );

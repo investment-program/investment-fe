@@ -52,6 +52,13 @@
   flex-wrap: wrap;
 }
 
+.side-by-side-section1 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 h2, h3 {
   font-size: 24px;
   margin-bottom: 15px;
