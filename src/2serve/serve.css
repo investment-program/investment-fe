@@ -1,78 +1,95 @@
-.Main2 {
-    background-color :#F8F9FD;
-  }   
+.Main2{
+  background-color :#F8F9FD;
+}   
 
-.main-container2{
-  justify-content: center;
-  padding: 20px;
-}
-     
-.input-group2 {
+.input-container {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  justify-content: space-between; /* 왼쪽과 오른쪽 분리 */
+  padding: 20px;
+  background-color: #F8F9FD;
+  border-radius: 8px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.input-group2 input {
-  width: 150px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-  text-align: start;
-}
-
-  .input-group2 button {
-    padding: 8px 12px;
-    background-color: #4C506B;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  } 
-
-  .input-group2 button:hover {
-    background-color: #7878c8;
-  }
-
-.inputfield {
+.left-panel {
+  flex: 3; /* 왼쪽이 더 넓게 */
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 70px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  max-width: 800px;
+  gap: 20px;
 }
 
-.inputfield ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 10px; 
-}
-
-.inputfield li {
-  padding: 5px;
+.right-panel {
+  flex: 1; /* 오른쪽은 좁게 */
   background-color: #f1f1f1;
-  border-radius: 4px;
-  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
 }
 
-.message {
-  color: red;
+.input-group2 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 300px;
 }
-  
-.submit-button2 {
-  align-self: center;
-  margin-top: 10px;
-  padding: 10px;
+
+.input-group2 button {
+  padding: 8px 12px;
   background-color: #4C506B;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.submit-button2:hover {
-    background-color: #7878c8;
-  }
+.input-group2 button:hover {
+  background-color: #7878c8;
+}
+
+.right-panel {
+  margin-right: 150px;
+}
+
+.right-panel h3 {
+  margin-bottom: 10px;
+}
+
+.stock-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.stock-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.remove-stock-button {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-stock-button:hover {
+  background-color: #ff4a4a;
+}
+
+.message {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.message.error {
+  color: red;
+}
