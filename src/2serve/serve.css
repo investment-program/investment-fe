@@ -2,27 +2,40 @@
   background-color :#F8F9FD;
 }   
 
+.main-container2{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 70px;
+  border-radius: 8px;
+  max-width: 2500px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
 .input-container {
   display: flex;
-  justify-content: space-between; /* 왼쪽과 오른쪽 분리 */
-  padding: 20px;
+  justify-content: space-around;
   background-color: #F8F9FD;
-  border-radius: 8px;
-  margin-left: 20px;
-  margin-right: 20px;
+  max-width: 1500px;
+  padding-right: 5%;
 }
 
 .left-panel {
-  flex: 3; /* 왼쪽이 더 넓게 */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  padding-right: 50px;
 }
 
 .right-panel {
-  flex: 1; /* 오른쪽은 좁게 */
-  background-color: #f1f1f1;
-  padding: 10px;
+  background-color: #edf0ff;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 8px;
   text-align: center;
 }
@@ -32,6 +45,16 @@
   gap: 10px;
   align-items: center;
   margin-left: 300px;
+  padding: 10px;
+}
+
+.input-group2 input {
+  width: 240px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: start;
 }
 
 .input-group2 button {
@@ -88,8 +111,27 @@
 .message {
   font-size: 14px;
   margin-top: 5px;
+  text-align: left;
+  padding: 10px;
+  color: blue;
+  margin-left: 391px;
 }
 
 .message.error {
   color: red;
+  text-align: left;
+  padding: 10px;
+  margin-left: 391px;
+}
+
+.stock-item {
+  padding: 5px 13px;
+  margin-bottom: 8px;
+  gap: 15px;
+}
+
+.suggestions-list {
+  text-align: left;
+  padding: 5px;
+  margin-left: 391px;
 }
